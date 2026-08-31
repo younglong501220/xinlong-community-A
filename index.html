@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>屏東縣枋寮鄉新龍社區 - 新三漁產業展售中心 | 龍膽石斑魚的故鄉</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f7ff',
+                            100: '#e0f0fe',
+                            200: '#bae2fd',
+                            500: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#0a354f',
+                        },
+                        sand: {
+                            300: '#fcd34d',
+                            400: '#f59e0b',
+                            500: '#d9a74a',
+                            600: '#c5903b',
+                            700: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-ocean-500 selection:text-white">
+
+    <!-- GitHub Base URL Variable helper JS -->
+    <script>
+        const RAW_IMG_BASE = "https://raw.githubusercontent.com/younglong501220/xinlong-community-A/refs/heads/main/images/";
+    </script>
+
+    <!-- 1. Header Navbar -->
+    <header class="sticky top-0 z-40 w-full bg-slate-900/85 backdrop-blur-md border-b border-slate-700/50 text-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo & Name -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/logo2.jpg" alt="新三漁品牌 Logo" class="w-12 h-12 rounded-full border-2 border-sand-500 object-cover group-hover:scale-105 transition-transform">
+                <div>
+                    <span class="text-xs text-sand-400 font-medium tracking-wider block">番仔崙 • 龍膽石斑魚的故鄉</span>
+                    <span class="text-lg font-bold text-white tracking-wide group-hover:text-sand-300 transition-colors">新三漁產業展售中心</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-sand-400 transition-colors py-1">新龍故事</a>
+                <a href="#pillars" class="hover:text-sand-400 transition-colors py-1">三生共榮</a>
+                <a href="#tours" class="hover:text-sand-400 transition-colors py-1">漁村體驗</a>
+                <a href="#dining" class="hover:text-sand-400 transition-colors py-1">在地風味餐</a>
+                <a href="#shop" class="hover:text-sand-400 transition-colors py-1">展售商城</a>
+                <a href="#contact" class="hover:text-sand-400 transition-colors py-1">聯絡資訊</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCartModal()" class="relative bg-ocean-700 hover:bg-ocean-800 text-white p-3 rounded-full shadow-lg transition-transform hover:scale-105 focus:outline-none" aria-label="檢視購物車">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-sand-500 text-slate-900 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center border-2 border-slate-900 shadow">0</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none">
+                    <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-sand-400 font-medium">新龍故事</a>
+            <a href="#pillars" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-sand-400 font-medium">三生共榮</a>
+            <a href="#tours" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-sand-400 font-medium">漁村體驗行程</a>
+            <a href="#dining" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-sand-400 font-medium">在地海鮮風味餐</a>
+            <a href="#shop" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-sand-400 font-medium">線上展售商城</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-sand-400 font-medium">聯絡與地圖</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="relative bg-gradient-to-b from-ocean-950 via-ocean-900 to-slate-900 text-white overflow-hidden py-16 lg:py-28">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay" style="background-image: url('https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/giant-grouper-photo.png');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sand-500/20 border border-sand-500/40 text-sand-300 text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-award text-sand-400"></i>
+                        <span>榮獲全國金牌農村肯定 • 漁村永續再生典範</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        番仔崙 <span class="text-sand-400">新龍社區</span><br>
+                        <span class="text-ocean-200 text-2xl sm:text-4xl block mt-2 font-normal">頂級龍膽石斑魚的溫暖故鄉</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        深耕屏東東港與枋寮海岸，以純淨海水養殖出肉質鮮甜、膠原蛋白豐富的龍膽石斑。結合生活照顧、生產加值與生態永續，邀請您體驗海味美食與溫馨漁村文化。
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#shop" class="w-full sm:w-auto px-8 py-4 bg-sand-500 hover:bg-sand-600 text-slate-950 font-bold rounded-xl shadow-lg hover:shadow-sand-500/30 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-store"></i> 前往線上展售中心
+                        </a>
+                        <a href="#tours" class="w-full sm:w-auto px-8 py-4 bg-ocean-700/80 hover:bg-ocean-700 text-white font-bold rounded-xl border border-ocean-500/50 backdrop-blur-md hover:border-ocean-400 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-compass"></i> 預約體驗行程
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/80 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-slate-700/80 shadow-2xl relative group">
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/giant-grouper-photo.png" alt="新龍社區代表照片" class="w-full h-72 sm:h-80 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 text-white">
+                                <span class="bg-sand-500 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">產地直送</span>
+                                <h3 class="text-xl font-bold mt-1">龍膽石斑 • 斑王之王</h3>
+                                <p class="text-xs text-slate-300">極致Ｑ彈魚皮 豐富天然膠原蛋白</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Community Story Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-ocean-700 font-bold tracking-widest text-sm uppercase block mb-2">Our Heritage & Story</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">新龍轉型 • 耀漁光</h2>
+                <div class="w-20 h-1 bg-sand-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Image Showcase -->
+                <div class="space-y-6">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-slate-100">
+                        <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/refs/heads/main/images/xinlong-community-story.jpg" alt="新龍故事代表照片" class="w-full h-80 object-cover">
+                        <div class="absolute inset-0 bg-ocean-950/20"></div>
+                    </div>
+                    <!-- Sub images -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden shadow border border-slate-100">
+                            <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/3life_coop.jpg" alt="農再代表照片" class="w-full h-40 object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow border border-slate-100">
+                            <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/hydrating-essence-lotion.jpg" alt="龍之美保養品照片" class="w-full h-40 object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Story Content -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-ocean-900 leading-snug">
+                        從莫拉克風災重建，到打造全台首創「全鱼利用」生技保養典範
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        新龍社區位於屏東縣枋寮鄉養殖生產生態區，昔稱「番仔崙」。面對人口老化與極端氣候挑戰，在執行長林春來與社區居民共同努力下，一步一腳印推動農村再生與漁村產業升級。
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        我們堅持優質無毒養殖，產出高品質龍膽石斑與午仔魚。更與產學機構合作，將傳統被廢棄的龍膽石斑魚鱗，透過高科技提煉萃取極致高濃度膠原蛋白，開發出**「龍之美 (LN)」**頂級系列保養品，實現「全魚價值最大化」的永續循環美學。
+                    </p>
+
+                    <!-- Key Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 text-center">
+                        <div class="bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-ocean-700">10+</span>
+                            <span class="text-xs text-slate-600 font-medium">農村再生歲月</span>
+                        </div>
+                        <div class="bg-sand-50/80 p-4 rounded-xl border border-sand-200">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-sand-600">100%</span>
+                            <span class="text-xs text-slate-600 font-medium">全魚加值利用</span>
+                        </div>
+                        <div class="bg-slate-100 p-4 rounded-xl border border-slate-200">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-slate-800">金牌</span>
+                            <span class="text-xs text-slate-600 font-medium">全國農村典範</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Three Pillars Section (三生共榮) -->
+    <section id="pillars" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-ocean-700 font-bold tracking-widest text-sm uppercase block mb-2">Sustainable Development</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">三面同步推動：生活 • 生產 • 生態</h2>
+                <p class="text-slate-600 mt-3">建立自主、自給、可持續營運的完整社區機制</p>
+                <div class="w-20 h-1 bg-sand-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1: 生活 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200/80 overflow-hidden group hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/3life_coop.jpg" alt="生活面意象" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-ocean-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow">生活面</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">基礎改善 • 長者共餐</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            完善巷道照明與排水系統，成立志工隊與長者據點。提供共餐、課程、衛教與陪伴服務，讓社區長者「願意來、可以來、安心來」。
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-1 border-t pt-3">
+                            <li><i class="fa-solid fa-check text-ocean-500 mr-1.5"></i>社區公共空間重構</li>
+                            <li><i class="fa-solid fa-check text-ocean-500 mr-1.5"></i>長者照護與關懷據點</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: 生產 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200/80 overflow-hidden group hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/giant-grouper-fillet.jpg" alt="生產面意象" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-sand-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full shadow">生產面</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">核心養殖 • 全魚加值</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            以龍膽石斑為核心，建立養殖、冷凍冷鏈、文創商品完整鏈條。開發魚酥、魚粥、湯底，並從魚鱗萃取膠原蛋白製作高品質保養品。
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-1 border-t pt-3">
+                            <li><i class="fa-solid fa-check text-sand-500 mr-1.5"></i>產地直銷冷鏈生鮮</li>
+                            <li><i class="fa-solid fa-check text-sand-500 mr-1.5"></i>LN 龍之美生技保養品</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: 生態 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200/80 overflow-hidden group hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/slacking-off.jpg" alt="生態面意象" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">生態面</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">水質控管 • 紅樹林共生</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            注重環境共存，嚴格管理養殖水質與安全用藥。保留紅樹林作為生態教學資源，結合潮汐導覽，展示生態與產業平衡之美。
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-1 border-t pt-3">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>安全無毒養殖管理</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>紅樹林溼地生態教育</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Vision Box -->
+            <div class="mt-12 bg-gradient-to-r from-ocean-900 to-slate-900 text-white rounded-2xl p-8 shadow-xl border border-ocean-800 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-left">
+                    <h4 class="text-xl font-bold text-sand-400">未來願景：新三漁產業展售中心多功能升級</h4>
+                    <p class="text-slate-300 text-sm max-w-3xl">
+                        一樓為特色產品展示、販售與導覽接待；二樓設置 DIY 與教學空間，可舉辦團隊活動、DIY 課程與親子體驗，不受天候限制，提供旅客最舒適的漁村接待體驗。
+                    </p>
+                </div>
+                <a href="#contact" class="px-6 py-3 bg-sand-500 hover:bg-sand-600 text-slate-950 font-bold rounded-xl whitespace-nowrap transition-colors shadow">
+                    實地走訪門市
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Experiential Tours Section -->
+    <section id="tours" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-ocean-700 font-bold tracking-widest text-sm uppercase block mb-2">Hands-on Experience</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">漁村體驗小旅行</h2>
+                <p class="text-slate-600 mt-2">走進漁鄉，親身體驗最接地氣的海洋文化與手作體驗</p>
+                <div class="w-20 h-1 bg-sand-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Tours Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="tour-cards-container">
+                <!-- Tour cards will be injected by JavaScript or statically listed -->
+            </div>
+
+            <!-- Interactive Tour Cost Calculator -->
+            <div class="mt-16 bg-ocean-50 border border-ocean-200 rounded-2xl p-6 sm:p-8 shadow-md">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-ocean-200">
+                    <div>
+                        <h3 class="text-2xl font-bold text-ocean-900"><i class="fa-solid fa-calculator text-sand-500 mr-2"></i>體驗行程預算與成團門檻試算</h3>
+                        <p class="text-slate-600 text-sm mt-1">選擇您感興趣的體驗行程與預計參加人數，即時試算總金額與成團狀態</p>
+                    </div>
+                    <span class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl text-xs font-semibold text-ocean-800 shadow-sm border border-ocean-200">
+                        <i class="fa-solid fa-circle-info text-ocean-500"></i> 請於 7 天前預約
+                    </span>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-6 pt-6">
+                    <!-- Left: Selectors -->
+                    <div class="lg:col-span-7 space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1">選擇體驗項目：</label>
+                            <select id="calc-tour-select" onchange="updateCalculator()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-ocean-500 focus:outline-none text-slate-800 font-medium">
+                                <!-- Options dynamically generated -->
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-1">參加人數 (人)：</label>
+                                <input type="number" id="calc-people" min="1" value="6" oninput="updateCalculator()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-ocean-500 focus:outline-none text-slate-800 font-bold">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-1">預計日期：</label>
+                                <input type="date" id="calc-date" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-ocean-500 focus:outline-none text-slate-800 text-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Summary Card -->
+                    <div class="lg:col-span-5 bg-white p-6 rounded-xl border border-ocean-200 flex flex-col justify-between shadow-sm">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-500">成團門檻要求：</span>
+                                <span id="calc-min-req" class="font-bold text-slate-700">6人成團</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-500">門檻檢核狀態：</span>
+                                <span id="calc-status" class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+                                    <i class="fa-solid fa-circle-check mr-1"></i> 已達預約門檻
+                                </span>
+                            </div>
+                            <div class="border-t border-slate-100 pt-3 flex justify-between items-baseline">
+                                <span class="text-slate-700 font-bold">預估總金額：</span>
+                                <span id="calc-total-price" class="text-3xl font-extrabold text-ocean-700">NT$ 1,800</span>
+                            </div>
+                        </div>
+                        <button onclick="submitTourBooking()" class="w-full mt-6 py-3 bg-ocean-700 hover:bg-ocean-800 text-white font-bold rounded-xl transition-colors shadow">
+                            模擬送出行程預約單
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Dining Section (在地海鮮風味餐) -->
+    <section id="dining" class="py-20 bg-slate-950 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-sand-400 font-bold tracking-widest text-sm uppercase block mb-2">Authentic Seafood Cuisine</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">在地海鮮風味餐</h2>
+                <p class="text-slate-400 mt-2">嚴選產地剛撈起最鮮美的石斑魚與在地旬味，帶來澎湃極致味蕾饗宴</p>
+                <div class="w-20 h-1 bg-sand-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Meal 1 -->
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-sand-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/soup-with-rice.jpg" alt="海鮮龍膽石斑湯飯" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-sand-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">6人成團</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">海鮮龍膽石斑湯飯</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                濃郁鮮美高湯熬煮，靈魂主角為滿滿彈牙龍膽石斑切片與白蝦，口感鮮甜豐富。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/80 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400">個人體驗價</span>
+                            <div class="text-2xl font-extrabold text-sand-400">$350 <span class="text-xs text-slate-400 font-normal">/ 1人</span></div>
+                        </div>
+                        <a href="#contact" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-sm font-semibold transition-colors">預約洽詢</a>
+                    </div>
+                </div>
+
+                <!-- Meal 2 -->
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border-2 border-sand-500/60 shadow-xl hover:border-sand-500 transition-all group flex flex-col justify-between relative">
+                    <span class="absolute top-3 left-3 z-10 bg-sand-500 text-slate-950 text-xs font-black px-3 py-1 rounded-md uppercase">超高人氣首選</span>
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/seafood-flavored-meal.jpg" alt="在地海鮮風味餐 (合菜)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-ocean-600 text-white font-bold text-xs px-3 py-1 rounded-full">最少兩桌</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">在地海鮮風味餐 (桌菜)</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                團體聚餐首選！包含完整清蒸石斑、海鮮料理、在地產蔬與精緻湯品（一桌 10 人以內）。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/80 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400">澎湃合菜價</span>
+                            <div class="text-2xl font-extrabold text-sand-400">$5,500 <span class="text-xs text-slate-400 font-normal">/ 1桌</span></div>
+                        </div>
+                        <a href="#contact" class="px-4 py-2 bg-sand-500 hover:bg-sand-600 text-slate-950 rounded-lg text-sm font-bold transition-colors">預約洽詢</a>
+                    </div>
+                </div>
+
+                <!-- Meal 3 -->
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-sand-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/exquisite-ocean-individual-set.jpg" alt="精緻海洋個人套餐" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-sand-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">最少6人</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">精緻海洋個人套餐</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                精緻個人位上美饌，呈現主廚獨門石斑料理、創意前菜、精緻甜點與養生膠原飲品。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/80 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400">尊榮套餐價</span>
+                            <div class="text-2xl font-extrabold text-sand-400">$760 <span class="text-xs text-slate-400 font-normal">/ 1人</span></div>
+                        </div>
+                        <a href="#contact" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-sm font-semibold transition-colors">預約洽詢</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notice -->
+            <p class="text-center text-slate-500 text-xs mt-8">
+                <i class="fa-solid fa-circle-exclamation text-sand-400 mr-1"></i> 為維護食材新鮮與品質，所有餐點均採預約制，請於一週前完成聯繫訂位。
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. Online Shop Section -->
+    <section id="shop" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-ocean-700 font-bold tracking-widest text-sm uppercase block mb-2">Direct From Origin</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">新三漁線上展售商城</h2>
+                <p class="text-slate-600 mt-2">嚴選產地生鮮水產與 LN 龍之美高濃度膠原蛋白保養品，直接宅配到家</p>
+                <div class="w-20 h-1 bg-sand-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Free Shipping Rule Notice Bar -->
+            <div class="bg-gradient-to-r from-ocean-800 to-ocean-950 text-white rounded-2xl p-4 sm:p-6 mb-10 shadow-lg border border-ocean-700 grid md:grid-cols-2 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-300 text-xl shrink-0 border border-blue-400/30">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white text-base">【冷凍生鮮宅配】</div>
+                        <div class="text-xs text-slate-300">滿 <span class="text-sand-300 font-bold">$5,000</span> 免運費（未達加收 $290 運費）</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 border-t md:border-t-0 md:border-l border-slate-700/80 pt-4 md:pt-0 md:pl-6">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center text-sand-300 text-xl shrink-0 border border-sand-400/30">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white text-base">【常溫保養品 / 乾貨】</div>
+                        <div class="text-xs text-slate-300">滿 <span class="text-sand-300 font-bold">$3,500</span> 免運費（未達加收 $180 運費）</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex justify-center gap-2 sm:gap-4 mb-10 flex-wrap">
+                <button onclick="filterCategory('all')" id="tab-all" class="category-tab px-6 py-2.5 rounded-full font-bold text-sm bg-ocean-700 text-white shadow-md transition-all">
+                    全部商品 (<span id="count-all">0</span>)
+                </button>
+                <button onclick="filterCategory('frozen')" id="tab-frozen" class="category-tab px-6 py-2.5 rounded-full font-bold text-sm bg-white text-slate-600 hover:bg-slate-100 shadow-sm border transition-all">
+                    <i class="fa-solid fa-snowflake text-blue-500 mr-1.5"></i>冷凍生鮮 (<span id="count-frozen">0</span>)
+                </button>
+                <button onclick="filterCategory('ambient')" id="tab-ambient" class="category-tab px-6 py-2.5 rounded-full font-bold text-sm bg-white text-slate-600 hover:bg-slate-100 shadow-sm border transition-all">
+                    <i class="fa-solid fa-sparkles text-sand-500 mr-1.5"></i>LN保養品 / 常溫食品 (<span id="count-ambient">0</span>)
+                </button>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Products dynamically rendered -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Shopping Cart & Checkout Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex justify-end transition-opacity">
+        <div class="bg-white w-full max-w-xl h-full shadow-2xl flex flex-col justify-between overflow-hidden relative">
+            <!-- Modal Header -->
+            <div class="p-6 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-bag-shopping text-sand-400 text-xl"></i>
+                    <h3 class="text-xl font-bold">我的購物車</h3>
+                </div>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Area -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                
+                <!-- Free Shipping Progress Bars -->
+                <div class="space-y-3 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                    <div>
+                        <div class="flex justify-between font-bold text-slate-700 mb-1">
+                            <span><i class="fa-solid fa-snowflake text-blue-500 mr-1"></i>冷凍生鮮免運進度 ($5000)</span>
+                            <span id="frozen-shipping-text" class="text-ocean-700">還差 $5000</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                            <div id="frozen-progress-bar" class="bg-blue-500 h-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between font-bold text-slate-700 mb-1">
+                            <span><i class="fa-solid fa-box text-sand-500 mr-1"></i>常溫商品免運進度 ($3500)</span>
+                            <span id="ambient-shipping-text" class="text-sand-600">還差 $3500</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                            <div id="ambient-progress-bar" class="bg-sand-500 h-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Items List -->
+                <div id="cart-items-container" class="space-y-4">
+                    <!-- Dynamic cart items -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="cart-empty-state" class="text-center py-12 text-slate-400">
+                    <i class="fa-solid fa-cart-flatbed text-5xl mb-3 text-slate-300"></i>
+                    <p class="font-medium text-slate-600">購物車目前是空的</p>
+                    <a href="#shop" onclick="toggleCartModal()" class="inline-block mt-4 text-xs font-bold text-ocean-700 underline">立即挑選好物</a>
+                </div>
+
+                <!-- Order Form Area -->
+                <div id="checkout-form-section" class="border-t border-slate-200 pt-6 space-y-4 hidden">
+                    <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-user-pen text-ocean-600"></i> 訂購人與配送資料
+                    </h4>
+
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">姓名 *</label>
+                            <input type="text" id="order-name" required placeholder="張小明" class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-ocean-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">聯絡電話 *</label>
+                            <input type="tel" id="order-phone" required placeholder="0912-345678" class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-ocean-500 focus:outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">宅配地址 *</label>
+                        <input type="text" id="order-address" required placeholder="請填寫完整配送地址" class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-ocean-500 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">匯款帳號末五碼 *</label>
+                        <input type="text" id="order-bank-last5" required maxlength="5" placeholder="例如：12345" class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-ocean-500 focus:outline-none text-sm font-mono">
+                    </div>
+
+                    <!-- Bank Account Info Box -->
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs space-y-2">
+                        <div class="font-bold text-amber-900 flex justify-between items-center">
+                            <span><i class="fa-solid fa-building-columns mr-1"></i>協會轉帳匯款專戶：</span>
+                            <button onclick="copyBankInfo()" class="text-ocean-700 hover:underline font-bold text-xs"><i class="fa-solid fa-copy mr-1"></i>一鍵複製帳號</button>
+                        </div>
+                        <div class="text-amber-800 space-y-0.5 font-mono">
+                            <div>銀行名稱：台灣土地銀行 枋寮分行 (代號 005)</div>
+                            <div>戶名：社團法人屏東縣枋寮鄉新龍社區發展協會</div>
+                            <div class="font-bold text-amber-900">帳號：126001560984</div>
+                        </div>
+                        <p class="text-amber-700 text-[11px] pt-1">※ 請於訂單成立後 2 日內完成轉帳匯款，以利第一時間為您安排出貨。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer (Summary & Action) -->
+            <div id="cart-footer" class="p-6 bg-slate-50 border-t border-slate-200 space-y-3">
+                <div class="space-y-1.5 text-xs text-slate-600">
+                    <div class="flex justify-between">
+                        <span>冷凍小計 / 運費：</span>
+                        <span id="summary-frozen">$0 / $0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>常溫小計 / 運費：</span>
+                        <span id="summary-ambient">$0 / $0</span>
+                    </div>
+                    <div class="flex justify-between text-base font-extrabold text-slate-900 pt-2 border-t border-slate-200">
+                        <span>應付總金額：</span>
+                        <span id="summary-grand-total" class="text-2xl text-ocean-700">NT$ 0</span>
+                    </div>
+                </div>
+
+                <button id="checkout-btn" onclick="processCheckout()" disabled class="w-full py-3.5 bg-sand-500 hover:bg-sand-600 disabled:bg-slate-300 text-slate-950 font-bold rounded-xl transition-colors shadow flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> 確認下單與確認轉帳
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-ocean-700 font-bold tracking-widest text-sm uppercase block">Contact & Visit Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">蒞臨新三漁產業展售中心</h2>
+                    <p class="text-slate-600">歡迎蒞臨屏東枋寮新龍社區，品嚐現撈龍膽石斑美食、購買精選農特產與保養品！</p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-ocean-100 text-ocean-700 rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">展售中心地址</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">940 屏東縣枋寮鄉義民路209之3號</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-sand-100 text-sand-700 rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">訂購與導覽預約專線</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">08-8780185 / 0929-579411</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">營業時間</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">週一至週日 08:30 – 17:00 (歡迎提前電話預約)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Store Front Photo -->
+                    <div class="pt-4">
+                        <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/logo2.jpg" alt="門市意象圖" class="w-full h-48 object-cover rounded-2xl shadow-md border border-slate-200">
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="lg:col-span-6 h-[450px] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.384666579304!2d120.590212!3d22.376829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e22f28edeb5d1%3A0xb363a0bf64047a0c!2zOTQw5YGlRm1hbOaVt-e-qeS_oeeCukM5OC0z6Jmf!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-center sm:justify-start gap-2">
+                        <img src="https://raw.githubusercontent.com/younglong501220/xinlong-community-A/main/images/logo2.jpg" alt="Logo" class="w-8 h-8 rounded-full">
+                        <span class="text-white font-bold text-base">新三漁產業展售中心</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        社團法人屏東縣枋寮鄉新龍社區發展協會<br>
+                        番仔崙石斑魚故鄉 • 永續發展典範
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white text-sm font-bold mb-3">快速連結</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#about" class="hover:text-sand-400 transition-colors">社區故事</a></li>
+                        <li><a href="#tours" class="hover:text-sand-400 transition-colors">體驗預約</a></li>
+                        <li><a href="#dining" class="hover:text-sand-400 transition-colors">風味餐點</a></li>
+                        <li><a href="#shop" class="hover:text-sand-400 transition-colors">線上商城</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white text-sm font-bold mb-3">產地宅配規則</h5>
+                    <ul class="text-xs space-y-2 text-slate-400">
+                        <li>• 冷凍滿 $5000 免運費</li>
+                        <li>• 常溫滿 $3500 免運費</li>
+                        <li>• 一律採用黑貓宅急便冷鏈配送</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white text-sm font-bold mb-3">關注我們</h5>
+                    <div class="flex justify-center sm:justify-start gap-3 text-lg">
+                        <a href="#" class="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-ocean-600 hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-sand-500 hover:text-slate-950 transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-colors" aria-label="LINE"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 text-xs text-slate-600 text-center flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 社團法人屏東縣枋寮鄉新龍社區發展協會. All Rights Reserved.</p>
+                <p>生鮮食品不適用七天鑑賞期 | 圖片僅供參考</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-slate-700 hidden flex items-center gap-3 transition-all duration-300 transform translate-y-2">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-msg" class="text-sm font-medium">訊息內容</span>
+    </div>
+
+    <!-- JavaScript Data & Business Logic -->
+    <script>
+        // -------------------------------------------------------------
+        // Data Definitions (Images GitHub Path Integrated)
+        // -------------------------------------------------------------
+        
+        // 8 Experiential Tours Data
+        const toursData = [
+            {
+                id: 't1',
+                title: '餵食龍膽石斑魚 + 導覽',
+                img: RAW_IMG_BASE + 'feeding-giant-grouper.jpg',
+                price: 300,
+                minPeople: 6,
+                desc: '近距離餵食水霸王龍膽石斑，聽解說員講述石斑魚生態與養殖秘辛。'
+            },
+            {
+                id: 't2',
+                title: '製作午仔魚一夜干',
+                img: RAW_IMG_BASE + 'making-dried-flounder.jpg',
+                price: 450,
+                minPeople: 6,
+                desc: '親手進行午仔魚去鱗剖開與鹽醃晾曬，帶回極致美味的海味伴手禮。'
+            },
+            {
+                id: 't3',
+                title: '石斑料理製作 (擠魚丸)',
+                img: RAW_IMG_BASE + 'squeezing-out-fish-balls.jpg',
+                price: 350,
+                minPeople: 6,
+                desc: '體驗將龍膽石斑鮮美魚肉親手捏擠成Q彈魚丸，現場烹煮品嚐。'
+            },
+            {
+                id: 't4',
+                title: '砢堀(摸魚)/龍的船人(划膠筏)',
+                img: RAW_IMG_BASE + 'slacking-off.jpg',
+                price: 500,
+                minPeople: 20,
+                desc: '體驗古早漁村摸魚與體驗體驗傳統膠筏划行，古意樂趣十足。'
+            },
+            {
+                id: 't5',
+                title: '手編漁網製作體驗',
+                img: RAW_IMG_BASE + 'fishing-net-making.jpg',
+                price: 300,
+                minPeople: 6,
+                desc: '由社區匠人手把手教導傳統織網工藝，編織出屬於自己的質感手提袋。'
+            },
+            {
+                id: 't6',
+                title: '沙窯體驗 / 鹹鴨蛋體驗',
+                img: RAW_IMG_BASE + 'shayao.jpg',
+                price: 300,
+                minPeople: 10,
+                desc: '傳統漁村沙窯樂趣或紅泥醃鹹鴨蛋手作，充滿童趣與食農教育。'
+            },
+            {
+                id: 't7',
+                title: '浸水營古道 / 大漢山走訪',
+                img: RAW_IMG_BASE + 'ancient-trail.jpg',
+                price: 300,
+                minPeople: 10,
+                desc: '走進歷史幽深的人文古道（導覽約 1.5 小時），感受山海交會生態。'
+            },
+            {
+                id: 't8',
+                title: '地利古厝巡禮',
+                img: RAW_IMG_BASE + 'historic-house.jpg',
+                price: 300,
+                minPeople: 10,
+                desc: '穿梭於古樸磚瓦的閩南傳統古厝，沉浸在漁村百年歷史人文氛圍中。'
+            }
+        ];
+
+        // Online Shop Products Data
+        const productsData = [
+            // Frozen Category
+            {
+                id: 'p1',
+                name: '龍膽石斑清肉',
+                category: 'frozen',
+                spec: '1斤/600g (秤重)',
+                price: 600,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'giant-grouper-fillet.jpg',
+                desc: '魚肉厚實肉質細嫩，富含天然膠質，清蒸、煮湯首選。'
+            },
+            {
+                id: 'p2',
+                name: '龍虎斑',
+                category: 'frozen',
+                spec: '1斤/600g (秤重)',
+                price: 400,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'dragon-tiger-grouper.jpg',
+                desc: '兼具龍膽皮厚與老虎斑肉細優點，口感鮮甜扎實。'
+            },
+            {
+                id: 'p3',
+                name: '龍膽石斑火鍋魚片',
+                category: 'frozen',
+                spec: '半斤/300g',
+                price: 450,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'giant-grouper-pot-hot-slices.jpg',
+                desc: '專業去骨切片，滾水輕涮幾秒即可享用Ｑ彈鮮美。'
+            },
+            {
+                id: 'p4',
+                name: '龍膽石斑魚頭',
+                category: 'frozen',
+                spec: '半斤/300g (秤重)',
+                price: 200,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'giant-grouper-head.jpg',
+                desc: '富含極高膠原蛋白，適合煮砂鍋魚頭或味噌湯。'
+            },
+            {
+                id: 'p5',
+                name: '午仔魚一夜干',
+                category: 'frozen',
+                spec: '1尾',
+                price: 200,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'one-night-dried.jpg',
+                desc: '遵循傳統工法鹽醃風乾，油脂豐富香氣十足。'
+            },
+            {
+                id: 'p6',
+                name: '午仔魚 (三去去鱗腮內臟)',
+                category: 'frozen',
+                spec: '1尾',
+                price: 160,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'threadfin-with-gills-removed.jpg',
+                desc: '貼心三去處理，退冰即可煎烤，老饕最愛的極緻細嫩。'
+            },
+            {
+                id: 'p7',
+                name: '龍膽石斑魚丸',
+                category: 'frozen',
+                spec: '1斤/600g (秤重)',
+                price: 450,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'fish-balls.jpg',
+                desc: '100%石斑魚肉打漿製作，無過多添加，咬勁彈牙。'
+            },
+            {
+                id: 'p8',
+                name: '龍膽石斑魚粥',
+                category: 'frozen',
+                spec: '1包',
+                price: 150,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'giant-grouper-congee.jpg',
+                desc: '濃郁魚湯精華熬煮粥品，營養滿分，加熱即可食用。'
+            },
+            {
+                id: 'p9',
+                name: '膠原蛋白凍飲',
+                category: 'frozen',
+                spec: '1罐',
+                price: 60,
+                temp: 'frozen',
+                img: RAW_IMG_BASE + 'collagen-jelly-drink.jpg',
+                desc: '天然魚鱗萃取，冰涼清爽，補充每日所需膠原養分。'
+            },
+
+            // Ambient / LN Skincare Category
+            {
+                id: 'p10',
+                name: '嫩白極潤面膜',
+                category: 'ambient',
+                spec: '5片/盒',
+                price: 580,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'facial-mask.png',
+                desc: '高濃度石斑魚鱗萃取膠原蛋白，深層極潤敷出水嫩肌。'
+            },
+            {
+                id: 'p11',
+                name: '膠原蛋白高效保濕化妝精露',
+                category: 'ambient',
+                spec: '120ml',
+                price: 580,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'hydrating-essence-lotion.jpg',
+                desc: '添加長效保濕玻尿酸與桑白皮萃取，迅速補充肌膚水分。'
+            },
+            {
+                id: 'p12',
+                name: '嫩白高效保濕修護乳液',
+                category: 'ambient',
+                spec: '50ml',
+                price: 980,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'repairing-lotion.png',
+                desc: '質地輕盈好吸收，修護乾燥，撫平細紋，展現淨白光澤。'
+            },
+            {
+                id: 'p13',
+                name: '嫩白高效保濕精華液',
+                category: 'ambient',
+                spec: '50ml',
+                price: 1180,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'moisturizing-serum.png',
+                desc: '高濃縮保濕精華，深層修護暗沉，使肌膚恢復彈性與光彩。'
+            },
+            {
+                id: 'p14',
+                name: '煥顏緊緻眼霜',
+                category: 'ambient',
+                spec: '30ml',
+                price: 780,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'eye-cream.png',
+                desc: '含六勝肽與Q10，緊緻眼周肌膚，撫平眼尾細紋。'
+            },
+            {
+                id: 'p15',
+                name: '全效煥顏活膚精華霜',
+                category: 'ambient',
+                spec: '50ml',
+                price: 1380,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'essence-cream.png',
+                desc: '潤澤修復，鎖住養分，全效緊緻嫩白，回復青春光采。'
+            },
+            {
+                id: 'p16',
+                name: '龍膽石斑魚湯 (真空常溫包)',
+                category: 'ambient',
+                spec: '1盒',
+                price: 150,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'fish-soup.png',
+                desc: '常溫便利保存，溫熱即可享用濃郁鮮甜石斑魚湯。'
+            },
+            {
+                id: 'p17',
+                name: '龍膽石斑魚酥',
+                category: 'ambient',
+                spec: '1盒',
+                price: 200,
+                temp: 'ambient',
+                img: RAW_IMG_BASE + 'crispy-giantg-grouper.jpg',
+                desc: '新鮮石斑魚肉製作，香酥順口，下飯配稀飯在地必買伴手禮。'
+            }
+        ];
+
+        // Cart State
+        let cart = [];
+
+        // -------------------------------------------------------------
+        // Application Initialization
+        // -------------------------------------------------------------
+        window.onload = function() {
+            renderToursCards();
+            populateCalculatorOptions();
+            renderProducts('all');
+            updateCartUI();
+        };
+
+        // -------------------------------------------------------------
+        // Render Functions
+        // -------------------------------------------------------------
+        function renderToursCards() {
+            const container = document.getElementById('tour-cards-container');
+            container.innerHTML = toursData.map(tour => `
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="${tour.img}" alt="${tour.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-ocean-900/90 text-sand-300 text-xs font-bold px-2.5 py-1 rounded-md border border-ocean-700">
+                                ${tour.minPeople}人成團
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-ocean-700 transition-colors mb-2">${tour.title}</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed line-clamp-2">${tour.desc}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-100 flex items-center justify-between mt-auto">
+                        <div class="text-ocean-700 font-extrabold text-lg">$${tour.price} <span class="text-xs text-slate-400 font-normal">/ 1人</span></div>
+                        <button onclick="selectTourForCalc('${tour.id}')" class="text-xs font-bold text-ocean-700 bg-ocean-50 hover:bg-ocean-100 px-3 py-1.5 rounded-lg transition-colors">
+                            試算與預約
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function populateCalculatorOptions() {
+            const select = document.getElementById('calc-tour-select');
+            select.innerHTML = toursData.map(tour => `
+                <option value="${tour.id}">${tour.title} — NT$${tour.price}/人 (成團門檻: ${tour.minPeople}人)</option>
+            `).join('');
+            updateCalculator();
+        }
+
+        function renderProducts(category) {
+            const container = document.getElementById('product-grid');
+            const filtered = category === 'all' 
+                ? productsData 
+                : productsData.filter(p => p.category === category);
+
+            // Update Counts
+            document.getElementById('count-all').innerText = productsData.length;
+            document.getElementById('count-frozen').innerText = productsData.filter(p => p.category === 'frozen').length;
+            document.getElementById('count-ambient').innerText = productsData.filter(p => p.category === 'ambient').length;
+
+            container.innerHTML = filtered.map(product => `
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative bg-slate-50">
+                            <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 ${product.temp === 'frozen' ? 'bg-blue-600' : 'bg-sand-500 text-slate-950'} text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">
+                                ${product.temp === 'frozen' ? '<i class="fa-solid fa-snowflake mr-1"></i>冷凍' : '<i class="fa-solid fa-box mr-1"></i>常溫'}
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[11px] text-slate-400 font-medium block mb-1">規格：${product.spec}</span>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-ocean-700 transition-colors">${product.name}</h3>
+                            <p class="text-slate-500 text-xs mt-1.5 line-clamp-2">${product.desc}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-100 flex items-center justify-between mt-auto">
+                        <div class="text-xl font-extrabold text-ocean-800">NT$ ${product.price}</div>
+                        <button onclick="addToCart('${product.id}')" class="px-3.5 py-2 bg-ocean-700 hover:bg-ocean-800 text-white rounded-xl text-xs font-bold transition-all shadow hover:scale-105 flex items-center gap-1.5">
+                            <i class="fa-solid fa-cart-plus"></i> 加入購物車
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Category Tab Handler
+        function filterCategory(category) {
+            document.querySelectorAll('.category-tab').forEach(btn => {
+                btn.className = "category-tab px-6 py-2.5 rounded-full font-bold text-sm bg-white text-slate-600 hover:bg-slate-100 shadow-sm border transition-all";
+            });
+
+            const activeBtn = document.getElementById(`tab-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "category-tab px-6 py-2.5 rounded-full font-bold text-sm bg-ocean-700 text-white shadow-md transition-all";
+            }
+
+            renderProducts(category);
+        }
+
+        // -------------------------------------------------------------
+        // Tour Calculator Interactivity
+        // -------------------------------------------------------------
+        function selectTourForCalc(tourId) {
+            document.getElementById('calc-tour-select').value = tourId;
+            updateCalculator();
+            document.getElementById('tours').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateCalculator() {
+            const tourId = document.getElementById('calc-tour-select').value;
+            const people = parseInt(document.getElementById('calc-people').value) || 1;
+            const tour = toursData.find(t => t.id === tourId);
+
+            if (!tour) return;
+
+            const total = tour.price * people;
+            const meetsReq = people >= tour.minPeople;
+
+            document.getElementById('calc-min-req').innerText = `${tour.minPeople} 人成團`;
+            document.getElementById('calc-total-price').innerText = `NT$ ${total.toLocaleString()}`;
+
+            const statusEl = document.getElementById('calc-status');
+            if (meetsReq) {
+                statusEl.className = "px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800";
+                statusEl.innerHTML = '<i class="fa-solid fa-circle-check mr-1"></i> 已達預約門檻';
+            } else {
+                statusEl.className = "px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800";
+                statusEl.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-1"></i> 未達門檻 (還差 ${tour.minPeople - people} 人)`;
+            }
+        }
+
+        function submitTourBooking() {
+            const tourId = document.getElementById('calc-tour-select').value;
+            const people = document.getElementById('calc-people').value;
+            const date = document.getElementById('calc-date').value;
+            const tour = toursData.find(t => t.id === tourId);
+
+            if (!date) {
+                showToast("請選擇預計體驗的日期", "warning");
+                return;
+            }
+
+            showToast(`已為您紀錄【${tour.title}】預約意向，專人將盡快聯絡！`, "success");
+        }
+
+        // -------------------------------------------------------------
+        // Shopping Cart Logic
+        // -------------------------------------------------------------
+        function addToCart(productId) {
+            const product = productsData.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            showToast(`已將「${product.name}」加入購物車`, "success");
+        }
+
+        function updateQty(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== productId);
+            }
+
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            // Cart Badge
+            const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+            document.getElementById('cart-badge').innerText = totalQty;
+
+            // Totals by temp
+            const frozenTotal = cart.filter(i => i.temp === 'frozen').reduce((sum, i) => sum + (i.price * i.qty), 0);
+            const ambientTotal = cart.filter(i => i.temp === 'ambient').reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+            // Free Shipping Logic
+            const frozenFreeThreshold = 5000;
+            const ambientFreeThreshold = 3500;
+
+            const frozenShipping = (frozenTotal > 0 && frozenTotal < frozenFreeThreshold) ? 290 : 0;
+            const ambientShipping = (ambientTotal > 0 && ambientTotal < ambientFreeThreshold) ? 180 : 0;
+
+            const grandTotal = frozenTotal + frozenShipping + ambientTotal + ambientShipping;
+
+            // Render Cart Progress Bars
+            const frozenPct = Math.min(100, (frozenTotal / frozenFreeThreshold) * 100);
+            document.getElementById('frozen-progress-bar').style.width = frozenPct + '%';
+            document.getElementById('frozen-shipping-text').innerText = frozenTotal >= frozenFreeThreshold || frozenTotal === 0
+                ? (frozenTotal >= frozenFreeThreshold ? '已達免運門檻！' : '還差 $5000')
+                : `還差 $${frozenFreeThreshold - frozenTotal}`;
+
+            const ambientPct = Math.min(100, (ambientTotal / ambientFreeThreshold) * 100);
+            document.getElementById('ambient-progress-bar').style.width = ambientPct + '%';
+            document.getElementById('ambient-shipping-text').innerText = ambientTotal >= ambientFreeThreshold || ambientTotal === 0
+                ? (ambientTotal >= ambientFreeThreshold ? '已達免運門檻！' : '還差 $3500')
+                : `還差 $${ambientFreeThreshold - ambientTotal}`;
+
+            // Render Cart Items
+            const itemsContainer = document.getElementById('cart-items-container');
+            const emptyState = document.getElementById('cart-empty-state');
+            const formSection = document.getElementById('checkout-form-section');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                formSection.classList.add('hidden');
+                checkoutBtn.disabled = true;
+            } else {
+                emptyState.classList.add('hidden');
+                formSection.classList.remove('hidden');
+                checkoutBtn.disabled = false;
+
+                itemsContainer.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                        <img src="${item.img}" alt="${item.name}" class="w-14 h-14 object-cover rounded-lg shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ${item.temp === 'frozen' ? 'bg-blue-100 text-blue-800' : 'bg-amber-100 text-amber-800'}">
+                                    ${item.temp === 'frozen' ? '冷凍' : '常溫'}
+                                </span>
+                                <h5 class="font-bold text-slate-800 text-sm truncate">${item.name}</h5>
+                            </div>
+                            <div class="text-xs text-slate-500 mt-0.5">NT$ ${item.price} / 單位</div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="updateQty('${item.id}', -1)" class="w-6 h-6 rounded-md bg-white border border-slate-300 text-slate-600 font-bold text-xs flex items-center justify-center hover:bg-slate-100">-</button>
+                            <span class="text-xs font-bold text-slate-800 w-4 text-center">${item.qty}</span>
+                            <button onclick="updateQty('${item.id}', 1)" class="w-6 h-6 rounded-md bg-white border border-slate-300 text-slate-600 font-bold text-xs flex items-center justify-center hover:bg-slate-100">+</button>
+                        </div>
+                        <div class="text-right font-bold text-slate-800 text-sm w-16">
+                            $${item.price * item.qty}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Summary Texts
+            document.getElementById('summary-frozen').innerText = `$${frozenTotal} / 運費 $${frozenShipping}`;
+            document.getElementById('summary-ambient').innerText = `$${ambientTotal} / 運費 $${ambientShipping}`;
+            document.getElementById('summary-grand-total').innerText = `NT$ ${grandTotal.toLocaleString()}`;
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function copyBankInfo() {
+            const bankText = "台灣土地銀行 枋寮分行 (代號 005) 帳號: 126001560984 戶名: 社團法人屏東縣枋寮鄉新龍社區發展協會";
+            
+            // Clipboard API with document.execCommand fallback
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(bankText).then(() => {
+                    showToast("匯款帳號已成功複製到剪貼簿！", "success");
+                });
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = bankText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast("匯款帳號已成功複製！", "success");
+                } catch (err) {
+                    showToast("複製失敗，請手動複製帳號", "warning");
+                }
+                document.body.removeChild(textarea);
+            }
+        }
+
+        function processCheckout() {
+            const name = document.getElementById('order-name').value;
+            const phone = document.getElementById('order-phone').value;
+            const address = document.getElementById('order-address').value;
+            const last5 = document.getElementById('order-bank-last5').value;
+
+            if (!name || !phone || !address || !last5) {
+                showToast("請完整填寫收件人與匯款資料！", "warning");
+                return;
+            }
+
+            showToast("感謝您的訂購！訂單已成功送出，專人將於查帳後為您安排出貨。", "success");
+            
+            // Reset Cart
+            cart = [];
+            updateCartUI();
+            toggleCartModal();
+        }
+
+        // -------------------------------------------------------------
+        // UI Helpers & Utilities
+        // -------------------------------------------------------------
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showToast(msg, type = "success") {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.innerText = msg;
+            if (type === "success") {
+                toastIcon.className = "fa-solid fa-circle-check text-emerald-400 text-lg";
+            } else {
+                toastIcon.className = "fa-solid fa-triangle-exclamation text-amber-400 text-lg";
+            }
+
+            toast.classList.remove('hidden');
+            toast.classList.remove('translate-y-2');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-2');
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
